@@ -80,7 +80,7 @@ async function start() {
         await mongoose.connect(keys.MONGODB_URI, {useNewUrlParser: true})
         console.log('+\tconnection established')
 
-        app.listen(3000, () => {
+        app.listen((process.env.PORT || 5000), () => {
             console.log('Serever is running...')
         })
     } catch(e) {
